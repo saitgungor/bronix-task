@@ -1,0 +1,13 @@
+.menuContainer {
+  display: flex;
+  gap: 56px;
+}
+
+.listItem {
+  list-style: none;
+  font-size: 24px;
+}
+
+.active {
+  font-weight: 700;
+}
