@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.inputContainer {
+  gap: 16px;
+  width: 498px;
+  display: flex;
+  flex-direction: column;
+}
+
+Input {
+  padding-left: 18px;
+  font-family: "Lato", sans-serif;
+  border-radius: 6px;
+  border: none;
+  font-size: 18px;
+}
+
+.textInput {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.messageInput {
+  height: 132px;
+}
+
+.messageInput::placeholder {
+  position: absolute;
+  top: 22px;
+}
+
+.submitButton {
+  background-color: #181e4b;
+  color: white;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  height: 38px;
+  align-items: center;
+  border-radius: 56px;
+}
