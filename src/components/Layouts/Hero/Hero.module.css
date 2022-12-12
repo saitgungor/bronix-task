@@ -1,0 +1,21 @@
+.heroContainer {
+  height: 378px;
+  padding: 0 80px 0;
+  background-color: #dadafd80;
+}
+
+.heroTextContainer {
+  margin-top: 77px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 64px;
+  color: #181e4b;
+  margin: 0;
+}
+
+.text {
+  font-size: 23px;
+  margin-top: 16px;
+}
