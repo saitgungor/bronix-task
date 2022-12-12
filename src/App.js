@@ -1,9 +1,9 @@
-import Header from "./components/Layouts/Header";
+import Hero from "./components/Layouts/Hero";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Hero />
     </div>
   );
 }
