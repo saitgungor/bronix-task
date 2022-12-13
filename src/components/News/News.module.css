@@ -1,0 +1,6 @@
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 80px 42px;
+}
