@@ -5,7 +5,7 @@ import Footer from "./Components/Layouts/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Hero />
       <News />
       <ContactUs />
