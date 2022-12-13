@@ -1,11 +1,13 @@
-import ContactUs from "./components/ContactUs";
-import Hero from "./components/Layouts/Hero";
+import ContactUs from "./Components/ContactUs";
+import Footer from "./Components/Layouts/Footer";
+import Hero from "./Components/Layouts/Hero";
 
 function App() {
   return (
     <div className="App">
       <Hero />
       <ContactUs />
+      <Footer />
     </div>
   );
 }
