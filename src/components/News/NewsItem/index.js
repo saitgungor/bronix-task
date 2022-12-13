@@ -1,13 +1,14 @@
 import styles from "./NewsItem.module.css";
-import newsImage from "../../../Assets/images/news-image.png";
 import shareIcon from "../../../Assets/images/share-icon.png";
 
-const NewsItem = () => {
+const NewsItem = ({ data }) => {
+  const { image, created, name } = data;
+  const createdDate = created.split("").splice(0, 10).join("");
   return (
     <div className={styles.container}>
-      <img src={newsImage} alt="newsImage" />
+      <img className={styles.image} src={image} alt="newsImage" />
       <div className={styles.newsContent}>
-        <h3>NEWS 1</h3>
+        <h3>{name}</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum
           vitae dictumst sit vitae, mi imperdiet sit. Lectus eleifend aliquam
@@ -20,7 +21,7 @@ const NewsItem = () => {
           nibh mauris, pretium. Lectus magnis lorem massa urna.{" "}
         </p>
         <div className={styles.newsContentBottom}>
-          <p>15 mins</p>
+          <p>{createdDate}</p>
           <div className={styles.like}>
             <img src={shareIcon} alt="share-icon" />
             <p>Beğen</p>
