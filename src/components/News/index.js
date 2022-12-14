@@ -20,27 +20,27 @@ const News = () => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && activePage !== PAGE_COUNT) {
-          console.log("Visible");
           getCharacters(nextPageArray);
         }
       });
       if (node) observer.current.observe(node);
     },
-    [isLoading]
+    [isLoading, activePage]
   );
 
-  const getCharacters = async (array) => {
+  const getCharacters = async (array, prev) => {
     try {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character/[${array}]`
       );
-
       const data = await response.json();
 
       if (!response.ok || data.length === 0) {
         throw new Error("Something went wrong!", response.status);
       }
-      setNews(data);
+      let dataPage = Math.ceil(data[0].id / 20);
+      if (prev) setNews(data);
+      activePage === dataPage ? setNews(data) : setNextNews(data);
       setIsLoading(false);
     } catch (error) {
       console.log(error.message);
@@ -48,6 +48,10 @@ const News = () => {
     }
   };
 
+  const prevPageArray = Array.from(
+    { length: 20 },
+    (_, i) => (activePage - 2) * 20 + i + 1
+  );
   const currentPageArray = Array.from(
     { length: 20 },
     (_, i) => (activePage - 1) * 20 + i + 1
@@ -63,30 +67,30 @@ const News = () => {
   ).filter((number) => number <= 826);
 
   useEffect(() => {
-    if (activePage === PAGE_COUNT) {
+    if (nextNews.length === 0) {
+      getCharacters(currentPageArray);
+    } else if (activePage === PAGE_COUNT) {
       getCharacters(lastPageArray);
     }
-    getCharacters(nextPageArray);
   }, [activePage]);
-
-  useEffect(() => {
-    getCharacters(currentPageArray);
-  }, []);
 
   const prevPageHandler = () => {
     if (activePage === 1) return;
     setActivePage((prev) => prev - 1);
+    getCharacters(prevPageArray, true);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const nextPageHandler = () => {
     if (activePage === 42) return;
     setActivePage((prev) => prev + 1);
-    // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    setNews(nextNews);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const goToLastPage = () => {
     setActivePage(PAGE_COUNT);
-    getCharacters(lastPageArray);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
   return (
     <div className={styles.newsContainer}>
