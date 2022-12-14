@@ -149,7 +149,10 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 127px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 500px;
     padding: 17px 33px;
     gap: 13px;
     border-radius: 4px;
@@ -157,35 +160,63 @@
   }
 
   .newsContent {
-    gap: 11px;
+    gap: 5px;
   }
 
   .newsContent h3 {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .newsContent p {
-    font-size: 9px;
+    font-size: 16px;
   }
 
   .newsContentBottom p {
-    font-size: 9px;
+    font-size: 16px;
   }
 
   .like {
-    gap: 2px;
+    gap: 4px;
   }
 
   .like img {
-    height: 13px;
-    width: 13px;
+    height: 20px;
+    width: 20px;
   }
 
   .like p {
-    font-size: 9px;
+    font-size: 16px;
   }
 
   .image {
     height: 127px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    height: 600px;
+    padding: 10px 20px;
+  }
+
+  .newsContent h3 {
+    font-size: 20px;
+  }
+
+  .newsContent p {
+    font-size: 16px;
+  }
+
+  .newsContentBottom p {
+    font-size: 16px;
+  }
+
+  .like img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .like p {
+    font-size: 16px;
   }
 }

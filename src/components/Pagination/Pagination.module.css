@@ -54,15 +54,15 @@
 
 @media (max-width: 768px) {
   .container {
-    gap: 13px;
+    gap: 16px;
   }
 
   .container img {
-    height: 19px;
-    width: 19px;
+    height: 24px;
+    width: 24px;
   }
 
   .numbers {
-    font-size: 10px;
+    font-size: 16px;
   }
 }

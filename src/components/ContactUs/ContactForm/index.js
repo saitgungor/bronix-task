@@ -2,7 +2,7 @@ import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.inputContainer}>
         <input className={styles.textInput} placeholder="Name" />
         <input className={styles.textInput} placeholder="Email" />

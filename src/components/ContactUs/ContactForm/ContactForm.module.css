@@ -137,9 +137,16 @@ Input {
 }
 
 @media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .inputContainer {
     gap: 9px;
-    width: 266px;
+    width: 70%;
+    margin: auto;
   }
 
   Input {
@@ -164,6 +171,8 @@ Input {
   .submitButton {
     margin-top: 13px;
     height: 20px;
+    width: 70%;
     border-radius: 30px;
+    margin: auto;
   }
 }
