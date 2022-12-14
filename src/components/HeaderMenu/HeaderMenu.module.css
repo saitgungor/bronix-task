@@ -11,3 +11,33 @@
 .active {
   font-weight: 700;
 }
+
+@media (max-width: 1280px) {
+  .menuContainer {
+    gap: 50px;
+  }
+
+  .listItem {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menuContainer {
+    gap: 30px;
+  }
+
+  .listItem {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuContainer {
+    display: none;
+  }
+
+  .listItem {
+    font-size: 14px;
+  }
+}

@@ -57,3 +57,152 @@
   opacity: 70%;
   cursor: pointer;
 }
+
+@media (max-width: 1280px) {
+  .footerContainer {
+    height: 320px;
+    padding-left: 99px;
+    padding-right: 71px;
+  }
+
+  .footerLeft img {
+    padding-top: 42px;
+    height: 50px;
+    width: 156px;
+  }
+
+  .footerLeft p {
+    padding-bottom: 32px;
+    font-size: 12px;
+  }
+
+  .footerRight {
+    padding-top: 62px;
+    gap: 44px;
+  }
+
+  .footerCol {
+    gap: 30px;
+  }
+
+  .footerColTitle {
+    font-size: 19px;
+  }
+
+  .footerCol ul {
+    gap: 11px;
+  }
+
+  .footerCol li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerContainer {
+    height: 256px;
+    padding-left: 79px;
+    padding-right: 57px;
+  }
+
+  .footerLeft img {
+    padding-top: 33px;
+    height: 40px;
+    width: 124px;
+  }
+
+  .footerLeft p {
+    padding-bottom: 26px;
+    font-size: 9px;
+  }
+
+  .footerRight {
+    padding-top: 50px;
+    gap: 36px;
+  }
+
+  .footerCol {
+    gap: 24px;
+  }
+
+  .footerColTitle {
+    font-size: 15px;
+  }
+
+  .footerCol ul {
+    gap: 9px;
+  }
+
+  .footerCol li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 550px;
+    position: relative;
+    padding: 0;
+  }
+
+  .footerLeft {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footerLeft img {
+    padding-top: 33px;
+    height: 40px;
+    width: 124px;
+  }
+
+  .footerLeft p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footerRight {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 0;
+  }
+
+  .footerCol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    gap: 0;
+  }
+
+  .footerColTitle {
+    font-size: 15px;
+  }
+
+  .footerCol li {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .show li {
+    display: block;
+  }
+  .hide li {
+    display: none;
+  }
+}
