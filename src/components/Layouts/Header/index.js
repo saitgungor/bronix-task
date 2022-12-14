@@ -14,7 +14,7 @@ const Header = () => {
       <HeaderMenu />
       <img
         className={styles.hamburgerMenu}
-        src={showMenu ? hamburgerMenu : closeIcon}
+        src={!showMenu ? hamburgerMenu : closeIcon}
         alt="hamburger-menu"
         onClick={() => setShowMenu((prev) => !prev)}
       />
