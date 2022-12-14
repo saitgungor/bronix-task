@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Loading from "../Loading";
 import ErrorComp from "../ErrorComp";
 import styles from "./News.module.css";
@@ -11,6 +11,23 @@ const News = () => {
   const [error, setError] = useState(false);
   const [activePage, setActivePage] = useState(1);
   const [news, setNews] = useState([]);
+  const [nextNews, setNextNews] = useState([]);
+
+  const observer = useRef();
+  const lastCharacterRef = useCallback(
+    (node) => {
+      if (isLoading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && activePage !== PAGE_COUNT) {
+          console.log("Visible");
+          getCharacters(nextPageArray);
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [isLoading]
+  );
 
   const getCharacters = async (array) => {
     try {
@@ -23,7 +40,6 @@ const News = () => {
       if (!response.ok || data.length === 0) {
         throw new Error("Something went wrong!", response.status);
       }
-
       setNews(data);
       setIsLoading(false);
     } catch (error) {
@@ -32,34 +48,62 @@ const News = () => {
     }
   };
 
-  const a = Array.from({ length: 20 }, (_, i) => (i + 1) * activePage);
+  const currentPageArray = Array.from(
+    { length: 20 },
+    (_, i) => (activePage - 1) * 20 + i + 1
+  );
+  const nextPageArray = Array.from(
+    { length: 20 },
+    (_, i) => activePage * 20 + i + 1
+  );
+
+  const lastPageArray = Array.from(
+    { length: 20 },
+    (_, i) => (PAGE_COUNT - 1) * 20 + i + 1
+  ).filter((number) => number <= 826);
 
   useEffect(() => {
-    getCharacters(a);
+    if (activePage === PAGE_COUNT) {
+      getCharacters(lastPageArray);
+    }
+    getCharacters(nextPageArray);
+  }, [activePage]);
+
+  useEffect(() => {
+    getCharacters(currentPageArray);
   }, []);
 
   const prevPageHandler = () => {
     if (activePage === 1) return;
-    setActivePage(activePage - 1);
+    setActivePage((prev) => prev - 1);
   };
 
   const nextPageHandler = () => {
     if (activePage === 42) return;
-    setActivePage(activePage + 1);
+    setActivePage((prev) => prev + 1);
+    // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const goToLastPage = () => {
     setActivePage(PAGE_COUNT);
+    getCharacters(lastPageArray);
   };
-
   return (
     <div className={styles.newsContainer}>
       {error && <ErrorComp />}
       {isLoading ? (
         <Loading />
       ) : (
-        news.map((news) => {
-          return <NewsItem data={news} key={news.id} />;
+        news.map((newsItem, index) => {
+          if (news.length === index + 1) {
+            return (
+              <div ref={lastCharacterRef} key={newsItem.id}>
+                <NewsItem data={newsItem} />
+              </div>
+            );
+          } else {
+            return <NewsItem data={newsItem} key={newsItem.id} />;
+          }
         })
       )}
       <Pagination

@@ -12,12 +12,12 @@ const Pagination = ({
   let first = activePage;
   let second = activePage + 1;
   if (activePage === lastPage) {
-    first = 40;
-    second = 41;
+    first = lastPage - 2;
+    second = lastPage - 1;
   }
 
-  if (activePage === 41) {
-    first = 40;
+  if (activePage === lastPage - 1) {
+    first = lastPage - 2;
     second = activePage;
   }
 
