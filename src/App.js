@@ -1,7 +1,7 @@
-import Hero from "./Components/Layouts/Hero";
-import News from "./Components/News";
-import ContactUs from "./Components/ContactUs";
-import Footer from "./Components/Layouts/Footer";
+import Hero from "./components/Layouts/Hero";
+import News from "./components/News";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Layouts/Footer";
 
 function App() {
   return (

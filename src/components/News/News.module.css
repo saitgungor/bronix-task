@@ -22,13 +22,6 @@
 @media (max-width: 768px) {
   .newsContainer {
     gap: 13px;
-    padding: 26px 43px 22px;
-  }
-}
-
-@media (max-width: 768px) {
-  .newsContainer {
-    gap: 13px;
     padding: 20px;
   }
 }
