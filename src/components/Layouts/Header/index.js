@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 import logo from "../../../Assets/images/header-logo.png";
 import hamburgerMenu from "../../../Assets/images/hamburger-menu.png";
+import closeIcon from "../../../Assets/images/close-icon.png";
 import HeaderMenu from "../../HeaderMenu";
 import HeaderHamburgerMenu from "../../HeaderHamburgerMenu";
 
@@ -13,7 +14,7 @@ const Header = () => {
       <HeaderMenu />
       <img
         className={styles.hamburgerMenu}
-        src={hamburgerMenu}
+        src={showMenu ? hamburgerMenu : closeIcon}
         alt="hamburger-menu"
         onClick={() => setShowMenu((prev) => !prev)}
       />

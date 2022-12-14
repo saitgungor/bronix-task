@@ -9,12 +9,21 @@
 .wrapper {
   position: absolute;
   height: 100%;
-  width: 50%;
+  width: 60%;
   background-color: #f6a321;
   left: 0;
   top: 0;
   margin: 0;
   display: block;
+}
+
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  border-bottom: 2px solid white;
+  box-shadow: 0 0 20px white;
 }
 
 .listItem {
@@ -27,10 +36,8 @@
 }
 
 .logo {
-  height: 73px;
-  width: 124px;
-  padding-left: 40px;
-  padding-top: 20px;
+  height: auto;
+  width: 166px;
 }
 
 @media (min-width: 768px) {

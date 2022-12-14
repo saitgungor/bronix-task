@@ -4,7 +4,9 @@ import styles from "./HeaderHamburgerMenu.module.css";
 const HeaderHamburgerMenu = () => {
   return (
     <div className={styles.wrapper}>
-      <img className={styles.logo} src={footerLogo} alt="logo" />
+      <div className={styles.imageWrapper}>
+        <img className={styles.logo} src={footerLogo} alt="logo" />
+      </div>
       <ul className={styles.listContainer}>
         <li className={`${styles.listItem}`}>About Us</li>
         <li className={`${styles.listItem}`}>Games</li>
