@@ -4,3 +4,51 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.headerContainer .logo {
+  width: 189px;
+  height: 78px;
+}
+
+@media (max-width: 1280px) {
+  .headerContainer {
+    padding-top: 47px;
+  }
+
+  .headerContainer .logo {
+    width: 168px;
+    height: 69px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headerContainer {
+    padding-top: 38px;
+  }
+
+  .headerContainer .logo {
+    width: 134px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    padding-top: 28px;
+  }
+
+  .hamburgerMenu {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hamburgerMenu {
+    display: none;
+  }
+}

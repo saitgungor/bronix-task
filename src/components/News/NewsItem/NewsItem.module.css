@@ -46,6 +46,11 @@
   gap: 4px;
 }
 
+.like img {
+  height: 24px;
+  width: 24px;
+}
+
 .like p {
   color: #f16a22;
   font-size: 18px;
@@ -54,4 +59,164 @@
 
 .image {
   height: 238px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    height: 210px;
+    padding: 28px 48px;
+    gap: 21px;
+    border-radius: 7px;
+    border-width: 1px;
+  }
+
+  .newsContent {
+    gap: 21px;
+  }
+
+  .newsContent h3 {
+    font-size: 25px;
+  }
+
+  .newsContent p {
+    font-size: 15px;
+  }
+
+  .newsContentBottom p {
+    font-size: 14px;
+  }
+
+  .like {
+    gap: 3px;
+  }
+
+  .like img {
+    height: 21px;
+    width: 21px;
+  }
+
+  .like p {
+    font-size: 16px;
+  }
+
+  .image {
+    height: 212px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: 168px;
+    padding: 23px 42px;
+    gap: 17px;
+    border-radius: 6px;
+    border-width: 1px;
+  }
+
+  .newsContent {
+    gap: 15px;
+  }
+
+  .newsContent h3 {
+    font-size: 20px;
+  }
+
+  .newsContent p {
+    font-size: 11px;
+  }
+
+  .newsContentBottom p {
+    font-size: 11px;
+  }
+
+  .like {
+    gap: 3px;
+  }
+
+  .like img {
+    height: 17px;
+    width: 17px;
+  }
+
+  .like p {
+    font-size: 13px;
+  }
+
+  .image {
+    height: 169px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 500px;
+    padding: 17px 33px;
+    gap: 13px;
+    border-radius: 4px;
+    border-width: 1px;
+  }
+
+  .newsContent {
+    gap: 5px;
+  }
+
+  .newsContent h3 {
+    font-size: 20px;
+  }
+
+  .newsContent p {
+    font-size: 16px;
+  }
+
+  .newsContentBottom p {
+    font-size: 16px;
+  }
+
+  .like {
+    gap: 4px;
+  }
+
+  .like img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .like p {
+    font-size: 16px;
+  }
+
+  .image {
+    height: 127px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    height: 600px;
+    padding: 10px 20px;
+  }
+
+  .newsContent h3 {
+    font-size: 20px;
+  }
+
+  .newsContent p {
+    font-size: 16px;
+  }
+
+  .newsContentBottom p {
+    font-size: 16px;
+  }
+
+  .like img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .like p {
+    font-size: 16px;
+  }
 }

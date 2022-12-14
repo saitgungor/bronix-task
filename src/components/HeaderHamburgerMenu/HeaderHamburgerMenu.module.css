@@ -1,0 +1,40 @@
+.listContainer {
+  color: white;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: #f6a321;
+  left: 0;
+  top: 0;
+  margin: 0;
+  display: block;
+}
+
+.listItem {
+  list-style: none;
+  font-size: 28px;
+}
+
+.active {
+  font-weight: 900;
+}
+
+.logo {
+  height: 73px;
+  width: 124px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: none;
+  }
+}
